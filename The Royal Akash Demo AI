@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royal Akash The AI | AAA Future 2026</title>
+
+<style>
+:root{
+--royal:#1a237e;
+--herbal:#2e7d32;
+--light:#f4f6fb;
+--white:#ffffff;
+--dark:#222;
+}
+body{margin:0;font-family:Arial;background:var(--light);color:var(--dark);}
+header{background:linear-gradient(135deg,var(--royal),var(--herbal));color:white;text-align:center;padding:40px 20px;}
+header h1{margin:0;font-size:28px;}
+section{padding:40px 20px;max-width:1100px;margin:auto;}
+.card{background:white;padding:20px;margin:15px 0;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,0.08);}
+button{padding:10px 20px;border:none;background:var(--royal);color:white;border-radius:6px;cursor:pointer;}
+input,select{width:100%;padding:10px;margin:8px 0;border-radius:6px;border:1px solid #ccc;}
+.chat-box{height:300px;overflow-y:auto;background:#eef2ff;padding:10px;border-radius:8px;}
+.message{margin:8px 0;padding:8px 12px;border-radius:15px;max-width:80%;}
+.user{background:#cde7ff;margin-left:auto;}
+.bot{background:#d7ffd9;}
+.plan{border:2px solid var(--royal);padding:15px;margin:10px 0;border-radius:8px;}
+.counter{font-weight:bold;color:var(--herbal);}
+footer{background:var(--royal);color:white;text-align:center;padding:30px 15px;font-size:14px;}
+.small{font-size:13px;color:#555;}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Royal Akash The AI 👑</h1>
+<p>AAA Framework – AI • Akash • Ayurveda</p>
+<p>AI + Ayurveda + Automation 2026</p>
+</header>
+
+<section>
+<h2>AI Digital Mentor</h2>
+<div class="card">
+<div class="chat-box" id="chat"></div>
+<input type="text" id="userInput" placeholder="Ask Royal Akash The AI...">
+<button onclick="sendMessage()">Send</button>
+</div>
+<p>Total AI Chats: <span class="counter" id="chatCount">0</span></p>
+</section>
+
+<section>
+<h2>Subscription Plans</h2>
+
+<div class="plan">
+<h3>Free Member</h3>
+<p>Basic AI + Health Access</p>
+<button onclick="simulatePayment(0)">Activate</button>
+</div>
+
+<div class="plan">
+<h3>Premium AI – ₹499 / month</h3>
+<p>Advanced AI + Training + Health Tools</p>
+<button onclick="simulatePayment(499)">Pay with Paytm</button>
+</div>
+
+<div class="plan">
+<h3>Royal Leadership – ₹999 / month</h3>
+<p>Certification + Affiliate System + Business Automation</p>
+<button onclick="simulatePayment(999)">Pay with Paytm</button>
+</div>
+
+<p>Total Payments: <span class="counter" id="paymentCount">0</span></p>
+</section>
+
+<section>
+<h2>Health Tools</h2>
+
+<div class="card">
+<h3>BMI Calculator</h3>
+<input type="number" id="height" placeholder="Height (cm)">
+<input type="number" id="weight" placeholder="Weight (kg)">
+<button onclick="calculateBMI()">Calculate</button>
+<p id="bmiResult"></p>
+</div>
+
+<div class="card">
+<h3>Calorie Estimator</h3>
+<input type="number" id="calWeight" placeholder="Weight (kg)">
+<button onclick="calculateCalories()">Estimate</button>
+<p id="calResult"></p>
+</div>
+
+<p>Tool Usage: <span class="counter" id="toolCount">0</span></p>
+</section>
+
+<section>
+<h2>Affiliate Signup</h2>
+<div class="card">
+<input type="text" placeholder="Name">
+<input type="email" placeholder="Email">
+<input type="tel" placeholder="Mobile">
+<select>
+<option>Beginner</option>
+<option>Intermediate</option>
+<option>Experienced</option>
+</select>
+<button onclick="alert('Affiliate Application Submitted')">Submit</button>
+</div>
+</section>
+
+<section>
+<h2>Investor SaaS Overview</h2>
+<div class="card">
+<p><strong>Revenue Streams:</strong></p>
+<ul>
+<li>AI Subscription</li>
+<li>Leadership Program</li>
+<li>Affiliate Override</li>
+<li>Health Consultation Upsell</li>
+</ul>
+<p><strong>Scalability:</strong> Cloud Based SaaS Model</p>
+<p><strong>Target Market:</strong> India → Asia → Global</p>
+</div>
+</section>
+
+<section class="card">
+<h3>Educational & Income Disclaimer</h3>
+<p>This platform is built for educational and training purposes only.</p>
+<p>No guaranteed income. Earnings depend on effort, skill and market conditions.</p>
+<p>Not medical advice. Consult licensed healthcare professional before using supplements.</p>
+<p>Complies with India Consumer Protection (Direct Selling) Rules 2021.</p>
+<p>International users must follow local country regulations including GDPR, FTC, FDA where applicable.</p>
+</section>
+
+<footer>
+<p>Royal Akash The AI – AAA Future Model 2026 🌿👑</p>
+<p>Ethical Network • Visionary Growth • Global Wellness</p>
+</footer>
+
+<script>
+let chatCounter=0;
+let paymentCounter=0;
+let toolCounter=0;
+
+function sendMessage(){
+let input=document.getElementById("userInput");
+let chat=document.getElementById("chat");
+let text=input.value.trim();
+if(!text) return;
+
+chat.innerHTML+="<div class='message user'>"+text+"</div>";
+let lower=text.toLowerCase();
+let reply="Thank you for connecting.";
+
+if(lower.includes("health")||lower.includes("diet")){
+reply="Focus on natural Ayurveda based nutrition and discipline.";
+}
+else if(lower.includes("network")||lower.includes("marketing")){
+reply="Follow win-win philosophy. Serve first, earn later.";
+}
+else if(lower.includes("income")){
+reply="Income depends on consistent effort and compliance.";
+}
+else if(lower.includes("business")){
+reply="Build ethical duplication system for scalable growth.";
+}
+
+chat.innerHTML+="<div class='message bot'>"+reply+"</div>";
+input.value="";
+chat.scrollTop=chat.scrollHeight;
+chatCounter++;
+document.getElementById("chatCount").innerText=chatCounter;
+}
+
+/* Paytm Production Hook Structure */
+function simulatePayment(amount){
+if(amount==0){
+alert("Free Plan Activated");
+return;
+}
+alert("Redirecting to Paytm (Demo Mode) for ₹"+amount);
+
+/* Production Integration Example:
+
+fetch('/create-order',{
+method:'POST',
+headers:{'Content-Type':'application/json'},
+body:JSON.stringify({amount:amount})
+})
+.then(res=>res.json())
+.then(data=>{
+window.location.href=data.paytmUrl;
+});
+
+*/
+
+paymentCounter++;
+document.getElementById("paymentCount").innerText=paymentCounter;
+}
+
+function calculateBMI(){
+let h=document.getElementById("height").value/100;
+let w=document.getElementById("weight").value;
+let bmi=(w/(h*h)).toFixed(2);
+document.getElementById("bmiResult").innerText="BMI: "+bmi;
+toolCounter++;
+document.getElementById("toolCount").innerText=toolCounter;
+}
+
+function calculateCalories(){
+let w=document.getElementById("calWeight").value;
+let cal=w*24;
+document.getElementById("calResult").innerText="Estimated Calories: "+cal;
+toolCounter++;
+document.getElementById("toolCount").innerText=toolCounter;
+}
+</script>
+
+</body>
+</html>
