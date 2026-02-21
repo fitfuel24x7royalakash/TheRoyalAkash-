@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royal Akash AI Ecosystem 2026</title>
+
+<style>
+:root{
+--royal:#1a237e;
+--herbal:#2e7d32;
+--light:#f4f6fb;
+--dark:#222;
+--white:#fff;
+}
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:var(--light);
+color:var(--dark);
+scroll-behavior:smooth;
+}
+
+header{
+background:linear-gradient(135deg,var(--royal),var(--herbal));
+color:var(--white);
+text-align:center;
+padding:40px 20px;
+}
+
+header h1{margin:0;font-size:28px;}
+header p{margin:8px 0;}
+
+.btn{
+display:inline-block;
+margin:10px;
+padding:10px 20px;
+background:var(--white);
+color:var(--royal);
+border-radius:25px;
+text-decoration:none;
+font-weight:bold;
+cursor:pointer;
+}
+
+section{
+padding:40px 20px;
+max-width:1000px;
+margin:auto;
+}
+
+.card{
+background:var(--white);
+padding:20px;
+margin:15px 0;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+
+input,select{
+width:100%;
+padding:10px;
+margin:8px 0;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+button{
+padding:10px 20px;
+background:var(--royal);
+color:var(--white);
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+.chat-box{
+height:300px;
+overflow-y:auto;
+background:#eef2ff;
+padding:10px;
+border-radius:8px;
+}
+
+.message{
+margin:8px 0;
+padding:8px 12px;
+border-radius:15px;
+max-width:80%;
+}
+
+.user{background:#d1e7ff;margin-left:auto;}
+.bot{background:#d4f5d4;}
+
+.plan{
+border:2px solid var(--royal);
+padding:15px;
+border-radius:8px;
+margin:10px 0;
+}
+
+footer{
+background:var(--royal);
+color:white;
+text-align:center;
+padding:30px 15px;
+font-size:14px;
+}
+.counter{
+font-weight:bold;
+color:var(--herbal);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Royal Akash AI ERA 2026 👑</h1>
+<p>Ethical Network • Visionary Growth • Global Wellness</p>
+<p>AI + Ayurveda + Nutraceutical</p>
+<a href="#ai" class="btn">Start AI Mentor</a>
+<a href="#wellness" class="btn">Explore Wellness</a>
+<a href="#network" class="btn">Join Network</a>
+</header>
+
+<section id="ai">
+<h2>AI Digital Mentor</h2>
+<div class="card">
+<div class="chat-box" id="chat"></div>
+<input type="text" id="userInput" placeholder="अपना प्रश्न पूछें...">
+<button onclick="sendMessage()">Send</button>
+</div>
+<p>Total AI Chats: <span class="counter" id="chatCount">0</span></p>
+</section>
+
+<section id="wellness">
+<h2>Health Tools</h2>
+
+<div class="card">
+<h3>BMI Calculator</h3>
+<input type="number" id="height" placeholder="Height (cm)">
+<input type="number" id="weight" placeholder="Weight (kg)">
+<button onclick="calculateBMI()">Calculate</button>
+<p id="bmiResult"></p>
+</div>
+
+<div class="card">
+<h3>Daily Calorie Estimator</h3>
+<input type="number" id="age" placeholder="Age">
+<select id="gender">
+<option value="male">Male</option>
+<option value="female">Female</option>
+</select>
+<input type="number" id="weightCal" placeholder="Weight (kg)">
+<button onclick="calculateCalories()">Estimate</button>
+<p id="calorieResult"></p>
+</div>
+
+<p>Tool Usage: <span class="counter" id="toolCount">0</span></p>
+</section>
+
+<section id="network">
+<h2>Network Marketing Training Hub</h2>
+
+<div class="card">
+<h3>Win-Win Philosophy</h3>
+<p>Customer wins first. Long term trust creates long term income.</p>
+</div>
+
+<div class="card">
+<h3>5 Step Blueprint</h3>
+<ul>
+<li>Self discipline</li>
+<li>Product knowledge</li>
+<li>Customer solution focus</li>
+<li>Team duplication</li>
+<li>Consistent follow up</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Leadership Checklist</h3>
+<ul>
+<li>Daily learning</li>
+<li>Daily prospecting</li>
+<li>Weekly team training</li>
+<li>Monthly performance review</li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2>Product Store</h2>
+
+<div class="card">
+<h3>Herbal Detox Formula</h3>
+<p>₹1499</p>
+<button onclick="buyProduct()">Buy Now</button>
+</div>
+
+<div class="card">
+<h3>Ayurvedic Fat Burn Support</h3>
+<p>₹1999</p>
+<button onclick="buyProduct()">Buy Now</button>
+</div>
+
+<div class="card">
+<h3>Immunity Booster Capsules</h3>
+<p>₹1299</p>
+<button onclick="buyProduct()">Buy Now</button>
+</div>
+
+<p>Product Clicks: <span class="counter" id="productCount">0</span></p>
+</section>
+
+<section>
+<h2>Affiliate Signup</h2>
+
+<div class="card">
+<input type="text" placeholder="Name">
+<input type="email" placeholder="Email">
+<input type="tel" placeholder="Mobile">
+<select>
+<option>Beginner</option>
+<option>Intermediate</option>
+<option>Experienced</option>
+</select>
+<button onclick="alert('Application Submitted Successfully')">Submit</button>
+</div>
+</section>
+
+<section>
+<h2>Monetization Plans</h2>
+
+<div class="plan">
+<h3>Free Member</h3>
+<p>Basic AI Access</p>
+</div>
+
+<div class="plan">
+<h3>Premium AI Access – ₹499/month</h3>
+<p>Advanced AI + Health Tools + Training</p>
+</div>
+
+<div class="plan">
+<h3>Royal Leadership Program – ₹999</h3>
+<p>Certification + Advanced Business Blueprint</p>
+</div>
+</section>
+
+<section class="card">
+<h3>Educational Purpose Notice</h3>
+<p>This platform is created for educational, training and awareness purposes. It does not provide medical diagnosis, financial guarantees or legal advice.</p>
+
+<h3>Income Disclaimer</h3>
+<p>Income shown or discussed depends on individual effort, skill, dedication and market conditions. No guaranteed earnings. Results vary person to person.</p>
+
+<h3>India Direct Selling Compliance</h3>
+<p>Operates in alignment with Consumer Protection (Direct Selling) Rules 2021, India. No pyramid structure. Product value first policy.</p>
+
+<h3>International Compliance</h3>
+<p>Users must follow local regulations of their respective countries regarding health advice, supplements and direct selling.</p>
+</section>
+
+<footer>
+<p>Royal Akash AI + Ayurveda Vision 2026 👑🌿</p>
+<p>Ethical Network • Visionary Growth • Global Wellness</p>
+<p>For Education and Skill Development Only</p>
+</footer>
+
+<script>
+let chatCounter=0;
+let toolCounter=0;
+let productCounter=0;
+
+function sendMessage(){
+let input=document.getElementById("userInput");
+let chat=document.getElementById("chat");
+let text=input.value.trim();
+if(!text) return;
+
+chat.innerHTML += "<div class='message user'>"+text+"</div>";
+
+let response="Thank you for your question.";
+let lower=text.toLowerCase();
+
+if(lower.includes("health") || lower.includes("nutrition")){
+response="Focus on natural diet, hydration and Ayurvedic balance.";
+}
+else if(lower.includes("network") || lower.includes("marketing")){
+response="Build trust. Follow win-win model. Serve first, earn later.";
+}
+else if(lower.includes("positive")){
+response="Discipline and consistency create long term success.";
+}
+else if(lower.includes("business")){
+response="Ethical duplication creates scalable income.";
+}
+else if(lower.includes("product")){
+response="Choose scientifically researched nutraceutical support.";
+}
+
+chat.innerHTML += "<div class='message bot'>"+response+"</div>";
+input.value="";
+chat.scrollTop=chat.scrollHeight;
+
+chatCounter++;
+document.getElementById("chatCount").innerText=chatCounter;
+}
+
+function calculateBMI(){
+let h=document.getElementById("height").value/100;
+let w=document.getElementById("weight").value;
+let bmi=(w/(h*h)).toFixed(2);
+document.getElementById("bmiResult").innerText="Your BMI: "+bmi;
+toolCounter++;
+document.getElementById("toolCount").innerText=toolCounter;
+}
+
+function calculateCalories(){
+let age=document.getElementById("age").value;
+let weight=document.getElementById("weightCal").value;
+let calories=weight*24;
+document.getElementById("calorieResult").innerText="Estimated Calories: "+calories;
+toolCounter++;
+document.getElementById("toolCount").innerText=toolCounter;
+}
+
+function buyProduct(){
+alert("Purchase Successful (Demo Mode)");
+productCounter++;
+document.getElementById("productCount").innerText=productCounter;
+}
+</script>
+
+</body>
+</html>
